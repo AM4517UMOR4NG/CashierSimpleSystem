@@ -7,15 +7,15 @@ import java.awt.*;
 import java.util.ArrayList;
 
 public class CashierSystem extends JFrame {
-    // Main layout
+    //Layout's Main Panel and Card Layout
     private CardLayout cardLayout;
     private JPanel mainPanel;
 
-    // Simulated databases
+    //Simulated databases for products and transactions
     private ArrayList<Product> productList = new ArrayList<>();
     private ArrayList<Transaction> transactionList = new ArrayList<>();
 
-    // For search filtering in product management
+    //Made for search filtering in product management panel 
     private DefaultTableModel productTableModel;
     
     public CashierSystem() {
@@ -24,7 +24,7 @@ public class CashierSystem extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
-        // Set Nimbus look and feel if available
+        //Set Nimbus look and feel if available (for better UI)
         try {
             for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -33,17 +33,17 @@ public class CashierSystem extends JFrame {
                 }
             }
         } catch (Exception e) {
-            // If Nimbus is not available, fall back to default.
+            //If Nimbus is not available, fall back to default look and feel
         }
 
         cardLayout = new CardLayout();
         mainPanel = new JPanel(cardLayout);
 
-        // Initialize sample data
+        //Initialize sample data for products and transactions
         initializeProducts();
         initializeTransactions();
 
-        // Add all panels to mainPanel
+        //Add all panels to mainPanel with card layout
         mainPanel.add(getLoginPanel(), "LOGIN");
         mainPanel.add(getDashboardPanel(), "DASHBOARD");
         mainPanel.add(getTransactionPanel(), "TRANSACTION");
@@ -55,17 +55,17 @@ public class CashierSystem extends JFrame {
         setVisible(true);
     }
 
-    // ----------------- Login Panel -----------------
+    //Login Panel with username and password input
     private JPanel getLoginPanel() {
         JPanel panel = new JPanel(new BorderLayout());
         panel.setBorder(new EmptyBorder(50, 50, 50, 50));
 
-        // Title
+        //Title label at the top of the panel 
         JLabel titleLabel = new JLabel("Login Kasir", SwingConstants.CENTER);
         titleLabel.setFont(new Font("Arial", Font.BOLD, 24));
         panel.add(titleLabel, BorderLayout.NORTH);
 
-        // Center form
+        //Center form panel with username, password, and login button 
         JPanel formPanel = new JPanel();
         formPanel.setLayout(new BoxLayout(formPanel, BoxLayout.Y_AXIS));
         formPanel.setBorder(new EmptyBorder(30, 50, 30, 50));
@@ -74,7 +74,7 @@ public class CashierSystem extends JFrame {
         JPasswordField txtPassword = new JPasswordField(15);
         JButton btnLogin = new JButton("Login");
 
-        // Center alignment
+        //Center alignment for text fields and button 
         txtUsername.setMaximumSize(txtUsername.getPreferredSize());
         txtPassword.setMaximumSize(txtPassword.getPreferredSize());
         btnLogin.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -104,7 +104,7 @@ public class CashierSystem extends JFrame {
         return panel;
     }
 
-    // ----------------- Dashboard Panel -----------------
+    //Dashboard Panel with transaction, product, report, and logout buttons
     private JPanel getDashboardPanel() {
         JPanel panel = new JPanel(new GridBagLayout());
         panel.setBorder(new EmptyBorder(30, 30, 30, 30));
@@ -141,12 +141,12 @@ public class CashierSystem extends JFrame {
         return panel;
     }
 
-    // ----------------- Transaction Panel -----------------
+    //Transaction Panel for cashier to process sales
     private JPanel getTransactionPanel() {
         JPanel panel = new JPanel(new BorderLayout(10, 10));
         panel.setBorder(new EmptyBorder(15, 15, 15, 15));
 
-        // Header
+        //Header with title and back button 
         JPanel header = new JPanel(new BorderLayout());
         JButton btnHome = new JButton("Kembali ke Home");
         btnHome.addActionListener(e -> cardLayout.show(mainPanel, "DASHBOARD"));
@@ -156,7 +156,7 @@ public class CashierSystem extends JFrame {
         header.add(lblTitle, BorderLayout.CENTER);
         panel.add(header, BorderLayout.NORTH);
 
-        // Left panel: product code input and quantity; also remove from cart option
+        //Left panel with input fields and buttons 
         JPanel leftPanel = new JPanel();
         leftPanel.setLayout(new BoxLayout(leftPanel, BoxLayout.Y_AXIS));
         leftPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
@@ -172,14 +172,14 @@ public class CashierSystem extends JFrame {
         inputPanel.add(btnAdd);
         leftPanel.add(inputPanel);
 
-        // Button to remove selected cart item
+        //Button to remove selected cart item 
         JButton btnRemove = new JButton("Hapus Item Terpilih");
         btnRemove.setAlignmentX(Component.LEFT_ALIGNMENT);
         leftPanel.add(btnRemove);
 
         panel.add(leftPanel, BorderLayout.WEST);
 
-        // Center panel: Cart table
+        //Center panel 
         DefaultTableModel cartTableModel = new DefaultTableModel(
                 new Object[]{"Kode", "Nama", "Harga", "Jumlah", "Subtotal"}, 0) {
             public boolean isCellEditable(int row, int column) {
@@ -191,7 +191,7 @@ public class CashierSystem extends JFrame {
         scrollCart.setPreferredSize(new Dimension(500, 200));
         panel.add(scrollCart, BorderLayout.CENTER);
 
-        // Bottom panel: Receipt area and checkout button
+        //Bottom panel with checkout button and receipt text area
         JPanel bottomPanel = new JPanel(new BorderLayout(10, 10));
         JButton btnCheckout = new JButton("Proses Pembayaran");
         bottomPanel.add(btnCheckout, BorderLayout.NORTH);
@@ -202,10 +202,10 @@ public class CashierSystem extends JFrame {
         bottomPanel.add(scrollReceipt, BorderLayout.CENTER);
         panel.add(bottomPanel, BorderLayout.SOUTH);
 
-        // Temporary cart storage
+        //Temporary cart storage as Arraylist of CartItem
         ArrayList<CartItem> cart = new ArrayList<>();
 
-        // Add product to cart
+        //Add product to cart button action 
         btnAdd.addActionListener(e -> {
             String code = txtProductCode.getText().trim();
             int qty;
@@ -215,7 +215,7 @@ public class CashierSystem extends JFrame {
                 JOptionPane.showMessageDialog(panel, "Jumlah harus berupa angka!");
                 return;
             }
-            // Find product by code
+            //Find product by code and check if quantity is available 
             Product prod = null;
             for (Product p : productList) {
                 if (p.getId().equalsIgnoreCase(code)) {
@@ -238,7 +238,7 @@ public class CashierSystem extends JFrame {
             txtQuantity.setText("");
         });
 
-        // Remove selected cart item
+        //Remove selected cart item button action
         btnRemove.addActionListener(e -> {
             int selectedRow = tableCart.getSelectedRow();
             if (selectedRow != -1) {
@@ -249,7 +249,7 @@ public class CashierSystem extends JFrame {
             }
         });
 
-        // Checkout button action
+        //Checkout button action to display receipt and record transaction
         btnCheckout.addActionListener(e -> {
             if (cart.isEmpty()) {
                 JOptionPane.showMessageDialog(panel, "Keranjang kosong!");
@@ -283,12 +283,12 @@ public class CashierSystem extends JFrame {
         return panel;
     }
 
-    // ----------------- Product Management Panel -----------------
+    //Product Management Panel for cashier to add new products
     private JPanel getProductPanel() {
         JPanel panel = new JPanel(new BorderLayout(10, 10));
         panel.setBorder(new EmptyBorder(15, 15, 15, 15));
 
-        // Header
+        //Header with title and back button
         JPanel header = new JPanel(new BorderLayout());
         JButton btnHome = new JButton("Kembali ke Home");
         btnHome.addActionListener(e -> cardLayout.show(mainPanel, "DASHBOARD"));
@@ -298,7 +298,7 @@ public class CashierSystem extends JFrame {
         header.add(lblTitle, BorderLayout.CENTER);
         panel.add(header, BorderLayout.NORTH);
 
-        // Center: Product table with search functionality
+        //Product table with search functionality and scroll pane 
         productTableModel = new DefaultTableModel(
                 new Object[]{"ID Produk", "Nama", "Harga", "Stok", "Kategori"}, 0) {
             public boolean isCellEditable(int row, int column) {
@@ -310,21 +310,21 @@ public class CashierSystem extends JFrame {
         panel.add(scrollPane, BorderLayout.CENTER);
         refreshProductTable();
 
-        // Search field above table
+        //Search field above table 
         JPanel searchPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         searchPanel.add(new JLabel("Cari Produk:"));
         JTextField txtSearch = new JTextField(15);
         searchPanel.add(txtSearch);
         panel.add(searchPanel, BorderLayout.SOUTH);
 
-        // Live search filtering
+        //Live search filtering for product table 
         txtSearch.getDocument().addDocumentListener(new DocumentListener() {
             public void insertUpdate(DocumentEvent e) { filterProducts(txtSearch.getText()); }
             public void removeUpdate(DocumentEvent e) { filterProducts(txtSearch.getText()); }
             public void changedUpdate(DocumentEvent e) { filterProducts(txtSearch.getText()); }
         });
 
-        // Form to add new product
+        //Form to add new product below table 
         JPanel formPanel = new JPanel(new FlowLayout());
         JTextField txtId = new JTextField(5);
         JTextField txtNama = new JTextField(10);
@@ -371,12 +371,12 @@ public class CashierSystem extends JFrame {
         return panel;
     }
 
-    // ----------------- Transaction Report Panel -----------------
+    //Transaction Report Panel for cashier to view transaction history
     private JPanel getReportPanel() {
         JPanel panel = new JPanel(new BorderLayout(10, 10));
         panel.setBorder(new EmptyBorder(15, 15, 15, 15));
 
-        // Header
+        //Header with title and back button 
         JPanel header = new JPanel(new BorderLayout());
         JButton btnHome = new JButton("Kembali ke Home");
         btnHome.addActionListener(e -> cardLayout.show(mainPanel, "DASHBOARD"));
@@ -386,7 +386,7 @@ public class CashierSystem extends JFrame {
         header.add(lblTitle, BorderLayout.CENTER);
         panel.add(header, BorderLayout.NORTH);
 
-        // Transaction report table
+        //Transaction report table with scroll pane 
         DefaultTableModel reportTableModel = new DefaultTableModel(
                 new Object[]{"ID Transaksi", "Tanggal", "Total Harga", "Metode Pembayaran", "ID Kasir"}, 0) {
             public boolean isCellEditable(int row, int column) {
@@ -401,7 +401,7 @@ public class CashierSystem extends JFrame {
         return panel;
     }
 
-    // ----------------- Helper Methods -----------------
+    //Helper Methods for UI Components and Data Management
     private void refreshCartTable(DefaultTableModel model, ArrayList<CartItem> cart) {
         model.setRowCount(0);
         for (CartItem item : cart) {
@@ -437,7 +437,7 @@ public class CashierSystem extends JFrame {
                 });
             }
         }
-        // For simplicity, update the productTableModel reference.
+        //Made for simplicity, update the productTableModel reference to the filtered model
         productTableModel = filteredModel;
     }
 
@@ -462,8 +462,8 @@ public class CashierSystem extends JFrame {
         transactionList.add(new Transaction("T003", "2025-02-16", 100000, "E-Wallet", "kasir"));
     }
 
-    // ----------------- Main Method -----------------
+    //Class Main Method 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(CashierSystem::new);
     }
-}
+}M
