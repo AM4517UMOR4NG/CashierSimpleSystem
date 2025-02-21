@@ -181,7 +181,7 @@ public class OneCashierSystem {
         }
     }
 
-    //Represents an individual item
+    //Represents an individual item with its details
     private static class Item {
         String name;
         int quantity;
