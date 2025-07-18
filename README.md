@@ -112,7 +112,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - **Data tidak tersimpan permanen** (belum terhubung ke database, hanya di memori selama aplikasi berjalan).
 - Untuk pengembangan lebih lanjut, bisa diintegrasikan dengan database (MySQL, SQLite, dsb).
-- Untuk kebutuhan demo cepat, aplikasi ini sudah sangat siap pakai!
+- Untuk kebutuhan demo cepa
 
 ---
 
