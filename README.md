@@ -108,7 +108,7 @@ CashierSimpleSystem/
 
 This project is licensed under the MIT License. 
 
-## 💡 Tips & Catatan
+## 💡 Catatan
 
 - **Data tidak tersimpan permanen** (belum terhubung ke database, hanya di memori selama aplikasi berjalan).
 - Untuk pengembangan lebih lanjut. Agar bisa diintegrasikan dengan database. 
