@@ -98,7 +98,7 @@ CashierSimpleSystem/
    - Setelah selesai, klik "Proses Pembayaran" untuk mencetak struk.
 3. **Manajemen Produk:**
    - Tambah produk baru melalui form di bawah tabel.
-   - Cari produk dengan fitur pencarian.
+   - Cari produk menggunakan fitur pencarian.
 4. **Laporan Transaksi:**
    - Lihat riwayat transaksi yang sudah dilakukan.
 
@@ -116,7 +116,7 @@ This project is licensed under the MIT License.
 
 ## 🤝 Kontribusi
 
-Kontribusi sangat terbuka! Silakan fork, buat branch, dan pull request untuk fitur/bugfix baru.
+Kontribusi sangat terbuka! Silakan fork, buat branch, dan pull request untuk fitur/bugfix baru. 
 
 
 
