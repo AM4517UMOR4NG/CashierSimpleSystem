@@ -116,7 +116,7 @@ This project is licensed under the MIT License.
 
 ## 🤝 Kontribusi
 
-Kontribusi sangat terbuka! Silakan fork, buat branch, dan pull request untuk fitur/bugfix baru. 
+Kontribusi/Bantuan sangat terbuka! Silakan fork, buat branch, dan pull request untuk fitur/bugfix baru. 
 
 
 
