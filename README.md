@@ -54,7 +54,7 @@ CashierSimpleSystem/
 ## 📦 Instalasi & Menjalankan Aplikasi
 
 ### **Prasyarat**
-- Java JDK 8 atau lebih baru
+- Java JDK 8 atau lebih edition
 - IDE (NetBeans, IntelliJ, Eclipse, atau bisa pakai terminal/command prompt)
 
 ### **Langkah Menjalankan**
