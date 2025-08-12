@@ -1,6 +1,6 @@
 # 💸 CashierSimpleSystem
 
-**CashierSimpleSystem** Merupakan aplikasi kasir berbasis Java dengan antarmuka grafis (GUI) modern menggunakan Swing. Proyek ini fokus dirancang untuk membantu pengelolaan transaksi penjualan, manajemen produk, dan pelaporan transaksi secara efisien di toko atau minimarket skala kecil hingga menengah.
+**CashierSimpleSystem** Merupakan aplikasi kasir berbasis Java dengan antarmuka grafis (GUI) modern menggunakan Swing. Proyek ini fokus dirancang untuk membantu pengelolaan transaksi penjualan, manajemen produk, dan pelaporan transaksi secara efisien di mart atau minimarket skala kecil hingga menengah.
 
 ---
 
