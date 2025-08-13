@@ -55,7 +55,7 @@ CashierSimpleSystem/
 
 ### **Prasyarat**
 - Java JDK 8 atau lebih edition
-- IDE (NetBeans, IntelliJ, Eclipse, atau bisa pakai terminal/command prompt)
+- IDE (NetBeans, IntelliJ, Eclipse, atau bisa pakai terminal)
 
 ### **Langkah Menjalankan**
 1. **Clone atau Download** repository ini.
