@@ -17,7 +17,7 @@
 - **Transaksi Penjualan**
   - Input kode produk & jumlah, tambah ke keranjang.
   - Validasi stok otomatis.
-  - Hapus item dari keranjang.
+  - Delete item dari keranjang.
   - Proses pembayaran dengan struk otomatis (termasuk pajak 10%).
   - Riwayat transaksi otomatis tercatat.
 
