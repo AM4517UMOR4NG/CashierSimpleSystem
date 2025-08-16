@@ -94,7 +94,7 @@ CashierSimpleSystem/
 
 1. **Login** ke aplikasi.
 2. **Transaksi Penjualan:**
-   - Masukkan kode produk & jumlah, klik "Tambah".
+   - Input kode produk & jumlah, klik "Tambah".
    - Setelah selesai, klik "Proses Pembayaran" untuk mencetak struk.
 3. **Manajemen Produk:**
    - Tambah produk baru melalui form di bawah tabel.
