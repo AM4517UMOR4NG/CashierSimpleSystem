@@ -110,7 +110,7 @@ This project is licensed under the MIT License.
 
 ## 💡 Catatan
 
-- **Data tidak tersimpan permanen (temporary) ** (belum/tidak terhubung ke database, hanya di memori selama aplikasi berjalan).
+- **Data tidak tersimpan permanen (temporary) ** (belum/tidak terhubung ke database, hanya di memori selama aplikasi dipakai).
 - Untuk pengembangan lebih lanjut. Agar bisa diintegrasikan dengan database. 
 
 
