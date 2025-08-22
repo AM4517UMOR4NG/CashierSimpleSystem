@@ -30,7 +30,7 @@
   - Tabel riwayat transaksi: ID, Tanggal, Total, Metode Pembayaran, ID Kasir.
   - Data dapat digunakan untuk rekap harian atau bulanan.
 
-- **Antarmuka Modern**
+- **Antarmuka Zaman now**
   - Menggunakan Look & Feel Nimbus (jika tersedia).
   - Responsive, mudah digunakan, dan ramah kasir.
 
