@@ -36,7 +36,7 @@
 
 ---
 
-## 🏗️ Struktur Proyek
+## 🏗️ Struktur Pekerjaan
 
 ```
 CashierSimpleSystem/
