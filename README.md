@@ -92,7 +92,7 @@ CashierSimpleSystem/
 
 ## 📝 Contoh Penggunaan
 
-1. **Login** ke aplikasi.
+1. **Login** ke App.
 2. **Transaksi Penjualan:**
    - Input kode produk & jumlah, klik "Tambah".
    - Setelah selesai, klik "Proses Pembayaran" untuk mencetak struk.
