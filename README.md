@@ -9,7 +9,7 @@
 - **Login Aman**
   - Username: `kasir`
   - Password: `123`
-  - Sistem login sederhana untuk membatasi akses aplikasi.
+  - Sistem login sederhana untuk memberikan batas akses aplikasi.
 
 - **Dashboard Interaktif**
   - Navigasi mudah ke fitur utama: Transaksi, Manajemen Produk, Laporan, dan Logout.
