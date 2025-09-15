@@ -76,7 +76,7 @@ CashierSimpleSystem/
 
 - **CashierSystem.java**
   - Kelas utama, mengatur seluruh tampilan dan logika aplikasi (login, dashboard, transaksi, produk, laporan).
-  - Menggunakan `CardLayout` untuk navigasi antar panel.
+  - Memakai `CardLayout` untuk navigasi antar panel.
   - Simulasi database menggunakan `ArrayList`.
 
 - **Product.java**
