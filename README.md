@@ -24,7 +24,7 @@
 - **Manajemen Produk**
   - Tabel produk dengan fitur pencarian real-time.
   - Tambah produk baru (ID, Nama, Harga, Stok, Kategori).
-  - Data produk tersimpan selama aplikasi berjalan.
+  - Data produtersimpan selama aplikasi berjalan.
 
 - **Laporan Transaksi**
   - Tabel riwayat transaksi: ID, Tanggal, Total, Metode Pembayaran, ID Kasir.
